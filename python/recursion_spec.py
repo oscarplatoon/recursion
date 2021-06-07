@@ -5,14 +5,46 @@ from recursion_challenge import *
 class TestRecursionChallenge(unittest.TestCase):
 
     """
+    ----------------
     Factorial tests:
+    ----------------
     """
     def test_catches_base_case(self):
         self.assertEqual(factorial(0), 1)
+
+    def test_catches_base_case_2(self):
+        self.assertEqual(factorial(1), 1)
+
+    def test_mid_size_factorial(self):
+        self.assertEqual(factorial(5), 120)
+
+    def test_big_factorial(self):
+        self.assertEqual(factorial(20), 2432902008176640000)
+
+
     """
-    99 Bottles Tests:
+    ----------------
+    Palindrome Tests
+    ----------------
     """
 
+    def test_returns_bool(self):
+        self.assertEqual(type(palindrome("test")), bool)
+
+    def test_single_word(self):
+        self.assertEqual(palindrome("hannah"), True)
+
+    def test_returns_sentence_palindrome(self):
+        self.assertEqual(palindrome("Sore was I ere I saw Eros."), True)
+
+    def test_returns_correct_with_hyphens(self):
+        self.assertEqual(palindrome("A man, a plan, a canal - - Panama"), True)
+
+    """
+    ----------------
+    99 Bottles Tests:
+    ----------------
+    """
     def test_0_bottles(self):
         self.assertEqual(type(bottles(0, "")), str)
 

@@ -1,15 +1,29 @@
 def factorial(num, total = 1):
+    # Base case, initialize total to 1, so if no change needed, it returns accurately.
     if num <=1:
         return total
+    # Takes default total, and starts multiplying it before recursing with a one
+    # less num and the updated total. Return total at each step
     else:
         total = total*num
-        print(total)
         return factorial(num-1, total)
 
-print(factorial(5))
-
 def palindrome(string):
-	pass
+    #Clean up input by discarding non alpha characters.
+    string = ''.join([i for i in string if i.isalpha()])
+    string = string.lower()
+
+    # Base Cases, if the string is down to 0 or 1 characters, the sentence is a palindrome.
+    if len(string) <= 1:
+        return True
+
+    # Test for equality of first and last character, if equal, slice them off and 
+    # rerun palindrome with truncated string. If not equal, return False.
+    if string[0] == string[len(string)-1]:
+        string = string[1:len(string)-1]
+        return palindrome(string)
+    else:
+        return False
 
 def bottles(num, str):
     #Base case:
