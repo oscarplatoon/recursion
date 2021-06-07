@@ -3,6 +3,12 @@ import unittest
 from recursion_challenge import *
 
 class TestRecursionChallenge(unittest.TestCase):
+
+    """
+    Factorial tests:
+    """
+    def test_catches_base_case(self):
+        self.assertEqual(factorial(0), 1)
     """
     99 Bottles Tests:
     """
