@@ -4,8 +4,9 @@ def factorial(x):
 def palindrome(string):
 	pass
 
-def bottles(num):
-	pass
+def bottles(num, str):
+    str = ""
+    return str
 
 def roman_num(num):
 	pass
