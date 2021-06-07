@@ -1,3 +1,6 @@
+from unittest import result
+
+
 def factorial(num, total = 1):
     # Base case, initialize total to 1, so if no change needed, it returns accurately.
     if num <=1:
@@ -50,5 +53,31 @@ def bottles(num, str):
         num -= 1
         return bottles(num, str)
 
-def roman_num(num):
-	pass
+def roman_num(num, result_str = ""):
+    int_roman_list = [
+        (1000, "M"),
+        (900, "CM"),
+        (500, "D"),
+        (400, "CD"),
+        (100, "C"),
+        (90, "XC"),
+        (50, "L"),
+        (40, "XL"),
+        (10, "X"),
+        (9, "IX"),
+        (5, "V"),
+        (4, "IV"),
+        (1, "I"),
+    ]
+    for i, value in enumerate(int_roman_list):
+        if num < 1:
+            print(result_str)
+            return result_str
+        elif num >= int_roman_list[i][0]:
+
+            a = num // int_roman_list[i][0]
+            while a > 0:
+                result_str += int_roman_list[i][1]
+                a -= 1
+            num = num % int_roman_list[i][0]
+            return(roman_num(num, result_str))

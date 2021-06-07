@@ -59,5 +59,17 @@ class TestRecursionChallenge(unittest.TestCase):
         # print(test_str)
         self.assertTrue(bottles(99, "") == test_str)
 
+    """
+    ----------------
+    Roman Numeral Tests:
+    ----------------
+    """
+
+    def test_returns_a_string(self):
+        self.assertEqual(type(roman_num(200)), str)
+
+    def test_roman_accuracy(self):
+        self.assertEqual(roman_num(193), "CXCIII")
+
 if __name__ == '__main__':
     unittest.main()
