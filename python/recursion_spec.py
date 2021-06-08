@@ -23,7 +23,7 @@ class PalindromeTest(unittest.TestCase):
 class bottles(unittest.TestCase):
 
   def test_bottles(self):
-    self.assertEqual(bottles(1), 'No more bottles')
+    self.__str__(bottles(1), 'No more bottles')
 
   def test_multiple(self):
     self.assertEqual(bottles(5), (f'{5} bottles of beer on the wall, {5} bottles of beer.')
