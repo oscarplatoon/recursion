@@ -29,15 +29,28 @@ def palindrome(string):
 		return True
 	if word[0] == word[-1]:
 		return palindrome(word[1:-1])
+	return False
+
+print(palindrome(""))
+
+
+def bottles(num, original):
+	new_num = num
+	# recursive case
+	if num >= 1:
+		print(f"{new_num} bottle{'s' if (new_num > 1) else ''} of beer on the wall, {new_num} bottle{'s' if (new_num > 1) else ''} of beer.")
+		new_num -= 1
+		if new_num > 0:
+			print(f"Take one down and pass it around, {new_num} bottle{'s' if new_num > 1 else ''} of beer on the wall.")
+			# return bottles(new_num, original)
+		return bottles(new_num, original)
+	# base case
 	else:
-		return False
+		print('Take one down and pass it around, no more bottles of beer on the wall.')
+		print('No more bottles of beer on the wall, no more bottles of beer.')
+		print(f'Go to the store and buy some more, {original} bottles of beer on the wall.')
 
-print(palindrome("A man, a plan, a canal -- Panama"))
-print(palindrome("a"))
-
-
-def bottles(num):
-	pass
+bottles(5, 5)
 
 def roman_num(num):
 	pass
